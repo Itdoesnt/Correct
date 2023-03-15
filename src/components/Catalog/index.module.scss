@@ -1,0 +1,18 @@
+.root {
+  padding: 40px 0;
+}
+
+.found {
+  margin-bottom: 24px;
+}
+
+.items {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 24px;
+}
+
+.item {
+  width: calc(25% - 24px);
+  height: 350px;
+}

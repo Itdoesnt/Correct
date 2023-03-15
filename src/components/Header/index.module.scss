@@ -1,0 +1,36 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search {
+  line-height: 24px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #000;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  padding: 8px 12px;
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+}
+
+.user {
+  height: 30px;
+  object-fit: cover;
+}

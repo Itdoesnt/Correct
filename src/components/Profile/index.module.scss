@@ -1,0 +1,45 @@
+.root {
+  padding: 40px 0;
+}
+
+.avatar {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+.column {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+
+.name {
+  font-size: 44px;
+  margin-bottom: 20px;
+}
+
+.fields {
+  display: flex;
+  flex-flow: column;
+}
+
+.logout {
+  background-color: transparent;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  border-radius: 12px;
+  font-size: 18px;
+  line-height: 22px;
+
+  &:hover {
+    background-color: #ddd;
+  }
+}

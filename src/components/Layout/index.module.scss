@@ -1,0 +1,25 @@
+.root {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.header {
+  background-color: #fee450;
+  height: 60px;
+  padding: 0 20%;
+  flex-shrink: 0;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 0 20%;
+}
+
+.footer {
+  height: 200px;
+  width: 100%;
+  background-color: #fee450;
+  padding: 0 20%;
+  flex-shrink: 0;
+}
