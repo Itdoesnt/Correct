@@ -32,10 +32,10 @@ export const SignIn = () => {
 
   useEffect(() => {
     if (isSuccess) {
-      dispatch(authActions.set(data.token));
+      dispatch(authActions.set(data?.token));
       navigate(urls.CATALOG);
     }
-  }, [isSuccess]);
+  }, [data?.token, dispatch, isSuccess, navigate]);
 
   return (
     <form className={styles.root} onSubmit={onSubmit}>

@@ -1,0 +1,18 @@
+.root {
+  padding: 40px 0;
+  display: flex;
+}
+
+.items {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+}
+
+.empty {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}

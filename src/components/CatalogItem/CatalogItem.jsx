@@ -1,33 +1,39 @@
 import classNames from 'classnames';
 import styles from './index.module.scss';
-import { getDiscountPrice } from '../../helpers/price';
+import { cartActions, cartSelectors } from '../../store/cart';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { urls } from '../../router/paths';
+import { Price } from '../Price/Price';
 
 export const CatalogItem = ({ className, product }) => {
-  const hasDiscount = !!product.discount;
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const inCart = useSelector(cartSelectors.itemById(product._id));
+
+  const onAdd = (product) => {
+    if (inCart) {
+      navigate(urls.CART);
+    } else {
+      dispatch(cartActions.increment(product));
+    }
+  };
 
   return (
     <div className={classNames(styles.root, className)}>
       <img className={styles.pic} src={product.pictures} alt="" />
       <div className={styles.content}>
-        <div className={styles.price}>
-          <span
-            className={classNames(styles.original, {
-              [styles.hasDiscount]: hasDiscount,
-            })}
-          >
-            {product.price} ₽
-          </span>
-          {hasDiscount && (
-            <span className={styles.discountPrice}>
-              {getDiscountPrice(product)} ₽
-            </span>
-          )}
-        </div>
+        <Price product={product} />
         <div className={styles.name} title={product.name}>
           {product.name}
         </div>
         <div className={styles.stock}>{product.stock} шт</div>
-        <button className={styles.button}>В корзину</button>
+        <button
+          className={classNames(styles.button, { [styles.inCart]: !!inCart })}
+          onClick={() => onAdd(product)}
+        >
+          {inCart ? 'Перейти' : 'В корзину'}
+        </button>
       </div>
     </div>
   );

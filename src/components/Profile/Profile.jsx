@@ -1,12 +1,12 @@
 import styles from './index.module.scss';
 import { useQuery } from 'react-query';
-import { useEffect } from 'react';
 import * as api from '../../api';
 import { Loading } from '../Loading/Loading';
 import { useNavigate } from 'react-router-dom';
 import { authActions, authSelectors } from '../../store/auth';
 import { useDispatch, useSelector } from 'react-redux';
 import { urls } from '../../router/paths';
+import { useSignIn } from '../../hooks/signin';
 
 export const Profile = () => {
   const navigate = useNavigate();
@@ -17,11 +17,7 @@ export const Profile = () => {
     api.getMe({ token })
   );
 
-  useEffect(() => {
-    if (!token) {
-      navigate(urls.SIGNIN);
-    }
-  }, [token]);
+  useSignIn();
 
   if (isLoading) {
     return <Loading className={styles.root} />;

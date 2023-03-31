@@ -3,6 +3,7 @@ export const routerPaths = {
   SIGNUP: 'signup',
   PROFILE: 'profile',
   CATALOG: 'catalog',
+  CART: 'cart',
 };
 
 export const urls = {
@@ -10,4 +11,5 @@ export const urls = {
   SIGNUP: `/${routerPaths.SIGNUP}`,
   PROFILE: `/${routerPaths.PROFILE}`,
   CATALOG: `/${routerPaths.CATALOG}`,
+  CART: `/${routerPaths.CART}`,
 };

@@ -1,0 +1,27 @@
+.root {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.original.hasDiscount {
+  position: relative;
+  font-weight: normal;
+  font-size: 14px;
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: red;
+    transform: rotate(-5deg);
+  }
+}
+
+.discountPrice {
+  color: red;
+  margin-left: 8px;
+}
